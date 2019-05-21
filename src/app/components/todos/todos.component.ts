@@ -19,4 +19,9 @@ export class TodosComponent implements OnInit {
     //thats from constructor which is from import TodoService
   }
 
+  deleteTodo(todo:Todo) {
+    this.todos = this.todos.filter(t => t.id !== todo.id);
+    this.todoService.deleteTodo(todo).subscribe();
+  }
+
 }
